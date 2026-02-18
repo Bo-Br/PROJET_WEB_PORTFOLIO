@@ -52,11 +52,16 @@ nav{
     height:fit-content;
     width: fit-content;
     justify-content: space-between;
-    margin: auto;
+    margin: 10px auto 10px auto;
 }
 
 
 @media screen  and (max-width: 800px){
+    nav{
+        flex-direction : column-reverse;
+        justify-content:center;
+        text-align: center;
+    }
     #hero{
         flex-direction : column-reverse;
         justify-content:space-around;
@@ -103,6 +108,7 @@ img{
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
 }
 
@@ -128,14 +134,16 @@ img{
 .zone_badges{
     display: flex;
     flex-direction: row;
-    -ms-flex-align: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .badges{
+    width: 50px;
     background-color: rgb(177, 161, 127);
     border-radius: 5px;
     margin: 3px;
+    text-align: center;
 }
 
 #about{
