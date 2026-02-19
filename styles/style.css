@@ -1,7 +1,7 @@
 :root{
     --box_back_color:  rgb(174, 167, 149);
 }
-
+/* div{border: 3px solid black;} */
 body{
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
