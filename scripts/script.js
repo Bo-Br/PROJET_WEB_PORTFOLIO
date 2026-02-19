@@ -1,6 +1,10 @@
 const mode_btn = document.querySelector("#color_mode")
 let theme = "l"
 
+if(localStorage["mode"] == undefined){
+    localStorage["mode"] = theme
+}
+
 // to set light mode
 function light_mode(){
     document.documentElement.classList.add("light");
@@ -31,11 +35,16 @@ mode_btn.addEventListener("click", () => {
 });
 // On page load
 addEventListener("DOMContentLoaded", () =>{
-    console.log(localStorage["mode"])
     if(localStorage["mode"] == "l"){
         light_mode()
     }else{
         dark_mode()
     }
 })
+
+addEventListener("scroll", () => {
+    console.log("scrolled")
+})
+
+
 

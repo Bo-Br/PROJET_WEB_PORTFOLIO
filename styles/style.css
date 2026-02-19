@@ -2,6 +2,8 @@
 /* ------------------- GENERAL --------------------- */
 /* ################################################# */
 
+
+
 :root{
     /* ------------------- GENERAL --------------------- */
     --main_back_clr : #000000;
@@ -23,7 +25,7 @@
     --text_color: #ffffff;
     --box_back_color:  #300b0b; /* couleur des fonds des sections */
     --button_back_color: #8e2323;  /* couleur de fond des boutons */
-    --card_color:#611010;
+    --card_color:#61101078;
     --borders : 1px solid #a51717; /* parametrage des bords */
     --big_box_shadow: 0px 0px 15px 5px #98313146; /* les ombres des grandes sections */
     --interact_shadow: 0px 0px 15px 2px #ff0000;
@@ -47,11 +49,31 @@
 
 
 body{
+
     background-color: var(--main_back_clr);
     color: var(--text_color);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     animation: background_color_change 20s ease-in-out infinite;
 }       
+
+#scroll_btn{
+    filter:blur(1px);
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    width: 39px;
+    right: 10px;
+    bottom: 10px;
+    background-color: var(--box_back_color);
+    padding: 5px;
+    border-radius: 5px;
+    border: var(--borders);
+    text-align: center;
+    font-size: 34px;
+    align-items:center;
+
+}
+
 
 @keyframes background_color_change{
     0%{background-color: var(--main_back_clr);}
@@ -151,7 +173,8 @@ img{
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
+    align-items: center;
 }
 
 /* ################################################# */
@@ -160,13 +183,15 @@ img{
 
 .card{
     margin: 5px;
-    width: 200px;
+    min-width: 290px;
+    max-width: 300px;
     align-items: center;
     background-color: var(--card_color);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    min-height: 400px;
+    max-height: 500px;
     scale: 1;
     transition: all 0.3s ease-in-out;
     border: 1px solid transparent;
@@ -193,7 +218,7 @@ img{
 }
 
 .badges{
-    border: none;
+    border: 1px solid transparent;
     zoom: 1;
     background-color: var(--button_back_color);
     border-radius: 5px;
@@ -249,7 +274,7 @@ footer{
 /* ---------------- MEDIA QUERIES ------------------ */
 /* ################################################# */
 
-@media screen  and (max-width: 800px){
+@media screen  and (max-width: 799px){
     nav{
         flex-direction : column-reverse;
         justify-content:center;
@@ -267,6 +292,11 @@ footer{
     #texte_hero{
         margin: 10px;
         }
+    }
+    #projects{
+    justify-content: center;
+    min-width: none;
+    width: min-content;
     }
 }
 
