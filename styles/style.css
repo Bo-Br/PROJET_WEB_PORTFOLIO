@@ -4,7 +4,8 @@
 
 :root{
     /* ------------------- GENERAL --------------------- */
-    --main_back_clr : #170202;
+    --main_back_clr : #000000;
+    --scnd_back_clr : #0e0000;
     --text_color: #ffffff;
     --box_back_color:  #300b0b; /* couleur des fonds des sections */
     --button_back_color: #8e2323;  /* couleur de fond des boutons */
@@ -12,10 +13,13 @@
     --borders : 1px solid #a51717; /* parametrage des bords */
     --big_box_shadow: 0px 0px 15px 5px #98313146; /* les ombres des grandes sections */
     --interact_shadow: 0px 0px 15px 2px #ff0000;
+    --h2_colors : #000000;
 }
+
 :root.dark{
     /* ------------------- DARK MODE --------------------- */
-    --main_back_clr : #170202;
+    --main_back_clr : #000000;
+    --scnd_back_clr : #0e0000;
     --text_color: #ffffff;
     --box_back_color:  #300b0b; /* couleur des fonds des sections */
     --button_back_color: #8e2323;  /* couleur de fond des boutons */
@@ -23,11 +27,13 @@
     --borders : 1px solid #a51717; /* parametrage des bords */
     --big_box_shadow: 0px 0px 15px 5px #98313146; /* les ombres des grandes sections */
     --interact_shadow: 0px 0px 15px 2px #ff0000;
+    --h2_colors : #ffffff;
 }
 
 :root.light{
     /* ------------------- WHITE MODE --------------------- */
-    --main_back_clr : #dfa5a5 ;
+    --main_back_clr : #ffffff;
+    --scnd_back_clr : #ffcece;
     --text_color:#000000;
     --box_back_color:  #c57373; /* couleur des fonds des sections */
     --button_back_color: #f89c9c;  /* couleur de fond des boutons */
@@ -35,19 +41,27 @@
     --borders : 1px solid #ffffff; /* parametrage des bords */
     --big_box_shadow: 0px 0px 15px 5px #d563637f; /* les ombres des grandes sections */
     --interact_shadow: 0px 0px 15px 2px #ff5656;
+    --h2_colors : #000000;
+
 }
 
 
 body{
+    background-color: var(--main_back_clr);
     color: var(--text_color);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: var(--main_back_clr);
-    
-
+    animation: background_color_change 20s ease-in-out infinite;
 }       
+
+@keyframes background_color_change{
+    0%{background-color: var(--main_back_clr);}
+    50%{background-color: var(--scnd_back_clr);}
+    100%{background-color: var(--main_back_clr);}
+} 
 
 .titres_sections{
     text-align: center;
+    color: var(--h2_colors);
 }
 
 /* ################################################# */
@@ -225,6 +239,7 @@ footer{
     border-radius: 10px ;
     bottom: 0px;
     a{
+        margin: 5px;
         text-decoration: none;
         color: var(--text_color);
     }
