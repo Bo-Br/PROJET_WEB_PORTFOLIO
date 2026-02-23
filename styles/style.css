@@ -226,7 +226,7 @@ img{
 /* ---------------------- ABOUT -------------------- */
 /* ################################################# */
 
-#about{
+.text_box{
     box-shadow: var(--big_box_shadow);
     margin: 10px;
     padding: 30px;
