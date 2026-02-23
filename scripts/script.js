@@ -43,7 +43,10 @@ mode_btn.addEventListener("click", () => {
   }
 });
 
-// On page load
+// ############################################################################################
+// ------------------------------------- ON PAGE LOAD -----------------------------------------
+// ############################################################################################
+
 addEventListener("DOMContentLoaded", () =>{
 
 // ###########################################
@@ -59,11 +62,6 @@ addEventListener("DOMContentLoaded", () =>{
     }else{
         dark_mode();
     }
-});
-
-// idk why I created this
-addEventListener("scroll", () => {
-    console.log("scrolled");
 });
 
 // ############################################################################################
@@ -100,8 +98,9 @@ async function catApi(){
 // ---- DOG IMAGE CARD API ---
 // ############################
 
-// const project_cards_zone = document.querySelector("#projects") it is used here but it is created on the top
 const DOG_API_URL = "https://dog.ceo/api/breeds/image/random" 
+// const project_cards_zone = document.querySelector("#projects") it is used here but it is created on the top
+
 
 async function dogApi(){
     try{
@@ -130,4 +129,12 @@ async function dogApi(){
     }
 };
 
-// ################
+
+// ############################################################################################
+// ------------------------------------------ OTHER -------------------------------------------
+// ############################################################################################
+
+// idk why I created this
+addEventListener("scroll", () => {
+    console.log("scrolled");
+});
