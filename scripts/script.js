@@ -1,4 +1,10 @@
+// ############################################################################################
+// -------------------------------- HTML ELEMENTS SELECTION -----------------------------------
+// ############################################################################################
+
 const mode_btn = document.querySelector("#color_mode")
+const api_zone = document.querySelector("#api_zone")
+const project_cards_zone = document.querySelector("#projects") 
 
 // ############################################################################################
 // ------------------------------------- COLOR MODES ------------------------------------------
@@ -39,7 +45,15 @@ mode_btn.addEventListener("click", () => {
 
 // On page load
 addEventListener("DOMContentLoaded", () =>{
+
+// ###########################################
+// ------------ CALLING API'S ----------------
+
     catApi()
+    dogApi()
+
+// ###########################################
+
     if(localStorage["mode"] == "l"){
         light_mode();
     }else{
@@ -47,36 +61,68 @@ addEventListener("DOMContentLoaded", () =>{
     }
 });
 
+// idk why I created this
 addEventListener("scroll", () => {
     console.log("scrolled");
 });
 
 // ############################################################################################
-// ----------------------------------------- API's --------------------------------------------
+// ----------------------------------------- API's -------------------------------------------
 // ############################################################################################
-// ------- cat API
-// ################
+// ----- CAT FACT TEXT API ---
+// ############################
 
-const url = "https://catfact.ninja/fact"
-api_zone = document.querySelector("#api_zone")
+
+const CAT_API_URL = "https://catfact.ninja/fact";
+// const api_zone = document.querySelector("#api_zone") it is used here but it is created on the top
 
 async function catApi(){
     try{
-    let response = await fetch(url);
+    let response = await fetch(CAT_API_URL);
     let data = await response.json();
+    console.log("catAPIloaded");
     console.log(data);
-    const cat_fact = data["fact"]
+    const cat_fact = data["fact"];
     api_zone.innerHTML = `
     <p>-- Cat fact (API exercise): ${cat_fact} --</p>
-    `
+    `;
 
     }catch(error){
-        console.error('Erreur' + error)
+        console.error('Erreur' + error);
         api_zone.innerHTML = `
     <p>-- Cat fact not available (check log) --</p>
-    `
-    }
+    `;
+    };
 
-}
+};
+
+// ############################
+// ---- DOG IMAGE CARD API ---
+// ############################
+
+// const project_cards_zone = document.querySelector("#projects") it is used here but it is created on the top
+const DOG_API_URL = "https://dog.ceo/api/breeds/image/random" 
+
+async function dogApi(){
+    let response = await fetch(DOG_API_URL);
+    let data = await response.json();
+    console.log("dogAPIloaded");
+    console.log(data);
+    let img = data["message"]
+    project_cards_zone.innerHTML += `
+        <div class = "card">
+            <div>
+                <img class = "proj_img" src=${img} alt="">
+            </div>
+
+            <h3> Image avec API </h3>
+
+            <div class = "zone_badges">
+
+                <div class = "badges">
+                    <p>Web API</p>
+                </div>
+    `;
+};
 
 // ################
