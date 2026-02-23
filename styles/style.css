@@ -126,6 +126,7 @@ nav{
     width: fit-content;
     justify-content: space-between;
     margin: 40px auto 10px auto;
+    padding : 5px;
 }
 
 #texte_hero{
