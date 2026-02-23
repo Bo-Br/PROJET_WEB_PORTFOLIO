@@ -1,4 +1,9 @@
 const mode_btn = document.querySelector("#color_mode")
+
+// ############################################################################################
+// ------------------------------------- COLOR MODES ------------------------------------------
+// ############################################################################################
+
 let theme = "l";
 
 if(localStorage["mode"] == undefined){
@@ -34,6 +39,7 @@ mode_btn.addEventListener("click", () => {
 
 // On page load
 addEventListener("DOMContentLoaded", () =>{
+    catApi()
     if(localStorage["mode"] == "l"){
         light_mode();
     }else{
@@ -44,3 +50,33 @@ addEventListener("DOMContentLoaded", () =>{
 addEventListener("scroll", () => {
     console.log("scrolled");
 });
+
+// ############################################################################################
+// ----------------------------------------- API's --------------------------------------------
+// ############################################################################################
+// ------- cat API
+// ################
+
+const url = "https://catfact.ninja/fact"
+api_zone = document.querySelector("#api_zone")
+
+async function catApi(){
+    try{
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+    const cat_fact = data["fact"]
+    api_zone.innerHTML = `
+    <p>-- Cat fact (API exercise): ${cat_fact} --</p>
+    `
+
+    }catch(error){
+        console.error('Erreur' + error)
+        api_zone.innerHTML = `
+    <p>-- Cat fact not available (check log) --</p>
+    `
+    }
+
+}
+
+// ################
