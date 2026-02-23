@@ -1,50 +1,46 @@
 const mode_btn = document.querySelector("#color_mode")
-let theme = "l"
+let theme = "l";
 
 if(localStorage["mode"] == undefined){
-    localStorage["mode"] = theme
-}
+    localStorage["mode"] = theme;
+};
 
 // to set light mode
 function light_mode(){
     document.documentElement.classList.add("light");
     document.documentElement.classList.remove("dark");
-    mode_btn.textContent = "Light Mode"
-    theme = "l"
-    localStorage.setItem("mode", theme)
-
-}
+    mode_btn.textContent = "Light Mode";
+    theme = "l";
+    localStorage.setItem("mode", theme);
+};
 
 // to set dark mode
 function dark_mode(){
     document.documentElement.classList.add("dark");
     document.documentElement.classList.remove("light");
-    mode_btn.textContent = "Dark Mode"
-    theme = "d"
-    localStorage.setItem("mode", theme)
-
-}
+    mode_btn.textContent = "Dark Mode";
+    theme = "d";
+    localStorage.setItem("mode", theme);
+};
 
 // Click on change colore mode button
 mode_btn.addEventListener("click", () => {
   if (theme == "d"){
-    light_mode()
+    light_mode();
   }else{
-    dark_mode()
+    dark_mode();
   }
 });
+
 // On page load
 addEventListener("DOMContentLoaded", () =>{
     if(localStorage["mode"] == "l"){
-        light_mode()
+        light_mode();
     }else{
-        dark_mode()
+        dark_mode();
     }
-})
+});
 
 addEventListener("scroll", () => {
-    console.log("scrolled")
-})
-
-
-
+    console.log("scrolled");
+});
