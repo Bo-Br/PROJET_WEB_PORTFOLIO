@@ -78,20 +78,20 @@ const CAT_API_URL = "https://catfact.ninja/fact";
 
 async function catApi(){
     try{
-    let response = await fetch(CAT_API_URL);
-    let data = await response.json();
-    console.log("catAPIloaded");
-    console.log(data);
-    const cat_fact = data["fact"];
-    api_zone.innerHTML = `
-    <p>-- Cat fact (API exercise): ${cat_fact} --</p>
-    `;
+        let response = await fetch(CAT_API_URL);
+        let data = await response.json();
+        console.log("catAPIloaded");
+        console.log(data);
+        const cat_fact = data["fact"];
+        api_zone.innerHTML = `
+        <p>-- Cat fact (API exercise): ${cat_fact} --</p>
+        `;
 
     }catch(error){
-        console.error('Erreur' + error);
-        api_zone.innerHTML = `
-    <p>-- Cat fact not available (check log) --</p>
-    `;
+            console.error('CatAPI Error: ' + error);
+            api_zone.innerHTML = `
+        <p>-- Cat fact not available (check log) --</p>
+        `;
     };
 
 };
@@ -104,25 +104,30 @@ async function catApi(){
 const DOG_API_URL = "https://dog.ceo/api/breeds/image/random" 
 
 async function dogApi(){
-    let response = await fetch(DOG_API_URL);
-    let data = await response.json();
-    console.log("dogAPIloaded");
-    console.log(data);
-    let img = data["message"]
-    project_cards_zone.innerHTML += `
-        <div class = "card">
-            <div>
-                <img class = "proj_img" src=${img} alt="">
-            </div>
-
-            <h3> Image avec API </h3>
-
-            <div class = "zone_badges">
-
-                <div class = "badges">
-                    <p>Web API</p>
+    try{
+        let response = await fetch(DOG_API_URL);
+        let data = await response.json();
+        console.log("dogAPIloaded");
+        console.log(data);
+        let img = data["message"]
+        project_cards_zone.innerHTML += `
+            <div class = "card">
+                <div>
+                    <img class = "proj_img" src=${img} alt="">
                 </div>
-    `;
+
+                <h3> Image avec API </h3>
+
+                <div class = "zone_badges">
+
+                    <div class = "badges">
+                        <p>Web API</p>
+                    </div>
+        `;
+    }catch(error){
+        console.error("DogAPI Error: "+ error)
+
+    }
 };
 
 // ################
