@@ -24,7 +24,7 @@ Tech stack:
   ## CSS 
   Well I don't think that I can say much about my **css** level here, it's also pretty *basic*, although I **really** like how I did the **Dark/light mode feature**, using css **variables**, and placing them into `:root`, changing it's class with **jvascript**. I also used the **media queries** feature of css to make the page a little bit **more responsive** that it already is with the **flex** module. I struggled a lot with the **navbar** objects, but css hopefully helped a lot placing objects with the **flex** module. I haven't used the css **grid** because **flex** is more instinctive for me *personally*.
 
-  # JAVASCRIPT
+  ## JAVASCRIPT
   For **javascript** I want to actually say that ***I liked it a lot***, at first glance when we were at school everybody just kept saying that **javascript** would be a **pain in the *head***, and it actually was, at start, but when I started understanding it... That feeling is just awesome. So for this project I needed using **javascript** for my dark mode feature and for **API** interaction. I really liked that part because I finally understood how to interact the DOM adding objects in it, while taking data from **API**'s with the `async/fetch/await` procedure. 
 
 ---
