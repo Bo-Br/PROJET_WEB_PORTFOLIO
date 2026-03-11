@@ -7,7 +7,7 @@ Description:
 Portfolio template website built using pure HTML, CSS and JavaScript without external libraries.
 
 Features:
-- Dark/Light mode using CSS variables and class toggling
+- Dark/Light mode using CSS variables and class toggling 
 - Responsive layout using Flexbox and media queries
 - API data fetching using async/await
 - Dynamic DOM rendering
@@ -15,7 +15,7 @@ Features:
 Tech stack:
 - HTML5
 - CSS3 (Flexbox, Variables, Media Queries)
-- JavaScript (Fetch API, async/await, DOM manipulation)
+- JavaScript (Fetch API, async/await, DOM manipulation, local storage)
 
 ---
   ## HTML
